@@ -62,7 +62,7 @@ const Projects = () => {
       image: "/project-portfolio.jpg",
       fallbackImage: `data:image/svg+xml,%3Csvg width='350' height='200' viewBox='0 0 350 200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='350' height='200' fill='%23e0f2f2' /%3E%3Crect x='75' y='30' width='200' height='20' rx='5' fill='%23008080' /%3E%3Crect x='50' y='70' width='250' height='10' rx='5' fill='%23008080' /%3E%3Crect x='50' y='90' width='250' height='10' rx='5' fill='%23008080' /%3E%3Crect x='50' y='110' width='250' height='10' rx='5' fill='%23008080' /%3E%3Crect x='130' y='140' width='90' height='30' rx='15' fill='%23008080' /%3E%3C/svg%3E`,
       technologies: ["React", "Material UI", "Framer Motion", "Vite"],
-      liveLink: "https://anitha-palaniyappan.netlify.app",
+      liveLink: "https://my-portfolio-hazel-mu-59.vercel.app/",
       codeLink: "https://github.com/anithapalaniyappan/portfolio",
     }
   ];
@@ -248,56 +248,43 @@ const Projects = () => {
             <Box 
               sx={{ 
                 position: 'relative',
+                width: '100%',
                 height: { xs: '200px', sm: '300px', md: '400px' },
                 overflow: 'hidden',
               }}
             >
-              <motion.div
-                animate={{
-                  translateX: `-${activeProject * 100}%`,
-                }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 300,
-                  damping: 30,
-                }}
-                style={{
-                  display: 'flex',
-                  width: `${projects.length * 100}%`,
+              <Box
+                sx={{
+                  position: 'relative',
+                  width: '100%',
                   height: '100%',
                 }}
               >
-                {projects.map((project) => (
-                  <Box
-                    key={project.id}
-                    sx={{
-                      position: 'relative',
-                      width: `${100 / projects.length}%`,
-                      height: '100%',
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        width: '100%',
-                        height: '100%',
-                        backgroundImage: `url(${imageError[project.id] ? project.fallbackImage : project.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        filter: 'brightness(0.7)',
-                      }}
-                    />
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        width: '100%',
-                        height: '100%',
-                        background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%)',
-                      }}
-                    />
-                  </Box>
-                ))}
-              </motion.div>
+                <img
+                  src={imageError[projects[activeProject].id] ? projects[activeProject].fallbackImage : projects[activeProject].image}
+                  alt={projects[activeProject].title}
+                  onError={() => handleImageError(projects[activeProject].id)}
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    filter: 'brightness(0.7)',
+                    left: 0,
+                    top: 0,
+                    zIndex: 1,
+                  }}
+                />
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%)',
+                    zIndex: 2,
+                  }}
+                />
+              </Box>
             </Box>
 
             <Box sx={{ position: 'relative', p: { xs: 3, md: 4 } }}>
