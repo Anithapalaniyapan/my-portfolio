@@ -7,9 +7,8 @@ import {
   TextField, 
   Button, 
   Paper, 
-  Alert,
-  Snackbar,
-  InputAdornment
+  InputAdornment,
+  FormHelperText
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
@@ -26,9 +25,7 @@ const Contact = () => {
     message: '',
   });
   const [errors, setErrors] = useState({});
-  const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState('');
-  const [snackbarSeverity, setSnackbarSeverity] = useState('success');
+  const [showGeneralError, setShowGeneralError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -69,12 +66,8 @@ const Contact = () => {
     e.preventDefault();
     
     if (validate()) {
+      setShowGeneralError(false);
       console.log('Form submitted:', formData);
-      
-
-      setSnackbarMessage('Message sent successfully! I will get back to you soon.');
-      setSnackbarSeverity('success');
-      setOpenSnackbar(true);
       
 
       setFormData({
@@ -83,15 +76,8 @@ const Contact = () => {
         message: '',
       });
     } else {
-
-      setSnackbarMessage('Please fix the errors in the form.');
-      setSnackbarSeverity('error');
-      setOpenSnackbar(true);
+      setShowGeneralError(true);
     }
-  };
-
-  const handleCloseSnackbar = () => {
-    setOpenSnackbar(false);
   };
 
   return (
@@ -421,7 +407,6 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleChange}
                           error={!!errors.name}
-                          helperText={errors.name}
                           InputProps={{
                             startAdornment: (
                               <InputAdornment position="start">
@@ -449,6 +434,9 @@ const Contact = () => {
                             }
                           }}
                         />
+                        {!!errors.name && (
+                          <FormHelperText sx={{ color: '#8e24aa', mt: 0.5 }}>{errors.name}</FormHelperText>
+                        )}
                       </motion.div>
                     </Grid>
                     <Grid item xs={12}>
@@ -466,7 +454,6 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleChange}
                           error={!!errors.email}
-                          helperText={errors.email}
                           InputProps={{
                             startAdornment: (
                               <InputAdornment position="start">
@@ -494,6 +481,9 @@ const Contact = () => {
                             }
                           }}
                         />
+                        {!!errors.email && (
+                          <FormHelperText sx={{ color: '#8e24aa', mt: 0.5 }}>{errors.email}</FormHelperText>
+                        )}
                       </motion.div>
                     </Grid>
                     <Grid item xs={12}>
@@ -512,7 +502,6 @@ const Contact = () => {
                           value={formData.message}
                           onChange={handleChange}
                           error={!!errors.message}
-                          helperText={errors.message}
                           InputProps={{
                             startAdornment: (
                               <InputAdornment position="start" sx={{ mt: 1 }}>
@@ -540,6 +529,9 @@ const Contact = () => {
                             }
                           }}
                         />
+                        {!!errors.message && (
+                          <FormHelperText sx={{ color: '#8e24aa', mt: 0.5 }}>{errors.message}</FormHelperText>
+                        )}
                       </motion.div>
                     </Grid>
                     <Grid item xs={12}>
@@ -580,26 +572,16 @@ const Contact = () => {
                     </Grid>
                   </Grid>
                 </motion.div>
+                {showGeneralError && (
+                  <Typography variant="caption" sx={{ color: '#8e24aa', display: 'block', mt: 2, textAlign: 'center' }}>
+                    Please fill all required fields
+                  </Typography>
+                )}
               </Paper>
             </motion.div>
           </Grid>
         </Grid>
       </Container>
-
-      <Snackbar
-        open={openSnackbar}
-        autoHideDuration={6000}
-        onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      >
-        <Alert 
-          onClose={handleCloseSnackbar} 
-          severity={snackbarSeverity} 
-          sx={{ width: '100%' }}
-        >
-          {snackbarMessage}
-        </Alert>
-      </Snackbar>
     </Box>
   );
 };
