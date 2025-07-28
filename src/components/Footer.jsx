@@ -53,7 +53,7 @@ const Footer = () => {
           >
             <Box sx={{ display: 'flex', gap: 1 }}>
               <IconButton 
-                href="https://www.linkedin.com/in/anitha-palaniyappan/"
+                href="https://github.com/Anithapalaniyapan"
                 target="_blank"
                 aria-label="LinkedIn"
                 sx={{ 

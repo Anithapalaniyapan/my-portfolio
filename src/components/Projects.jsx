@@ -63,7 +63,7 @@ const Projects = () => {
       fallbackImage: `data:image/svg+xml,%3Csvg width='350' height='200' viewBox='0 0 350 200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='350' height='200' fill='%23e0f2f2' /%3E%3Crect x='75' y='30' width='200' height='20' rx='5' fill='%23008080' /%3E%3Crect x='50' y='70' width='250' height='10' rx='5' fill='%23008080' /%3E%3Crect x='50' y='90' width='250' height='10' rx='5' fill='%23008080' /%3E%3Crect x='50' y='110' width='250' height='10' rx='5' fill='%23008080' /%3E%3Crect x='130' y='140' width='90' height='30' rx='15' fill='%23008080' /%3E%3C/svg%3E`,
       technologies: ["React", "Material UI", "Framer Motion", "Vite"],
       liveLink: "https://my-portfolio-hazel-mu-59.vercel.app/",
-      codeLink: "https://github.com/anithapalaniyappan/portfolio",
+      codeLink: "https://github.com/Anithapalaniyapan/my-portfolio",
     }
   ];
 
