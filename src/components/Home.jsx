@@ -383,7 +383,7 @@ const Home = () => {
 
               <Box
                 component="img"
-                src="/hero-image.png"
+                src="/hero-image.jpg"
                 alt="Anitha Palaniyappan"
                 sx={{
                   width: '100%',
