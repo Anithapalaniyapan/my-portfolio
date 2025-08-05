@@ -37,6 +37,16 @@ const Projects = () => {
     },
     {
       id: 2,
+      title: "Shopping Mall",
+      description: "A responsive Shopping Mall landing page built with HTML and CSS showcasing modern design and layout.",
+      image: "/Shopping_Mall.png",
+      fallbackImage: `data:image/svg+xml,%3Csvg width='350' height='200' viewBox='0 0 350 200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='350' height='200' fill='%23e0f2f2' /%3E%3Crect x='40' y='40' width='80' height='80' rx='5' fill='%23008080' /%3E%3Crect x='135' y='40' width='80' height='80' rx='5' fill='%23008080' /%3E%3Crect x='230' y='40' width='80' height='80' rx='5' fill='%23008080' /%3E%3Crect x='40' y='140' width='270' height='20' rx='5' fill='%23008080' /%3E%3C/svg%3E`,
+      technologies: ["HTML", "CSS"],
+      liveLink: " https://anithapalaniyapan.github.io/SM/",
+      codeLink: "https://github.com/AnithaPalaniyappan/Mall",
+    },
+    {
+      id: 3,
       title: "Class Commitee Meeting and Feedback Management System",
       description: "A role-based web application to manage class committee meetings and feedback between students, faculty, and directors. It ensures secure login, feedback submission, and meeting schedule management.",
       image: "/project-task-manager.png",
@@ -46,7 +56,7 @@ const Projects = () => {
       codeLink: "https://github.com/Anithapalaniyapan/Leet_Code1",
     },
     {
-      id: 3,
+      id: 4,
       title: "My Portfolio Builder",
       description: "Developed the complete frontend for the landing page of an AI-based portfolio builder website.",
       image: "/Portfolio_Builder.png",
@@ -56,7 +66,7 @@ const Projects = () => {
       codeLink: "https://github.com/Anithapalaniyapan/my-portfolio-builder",
     },
     {
-      id: 4,
+      id: 5,
       title: "Personal Portfolio",
       description: "A modern portfolio website showcasing my skills and projects. Features include responsive design, interactive UI elements, smooth animations, and 3D effects.",
       image: "/project-portfolio.jpg",
