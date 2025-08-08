@@ -62,7 +62,7 @@ const Projects = () => {
       image: "/Portfolio_Builder.png",
       fallbackImage: `data:image/svg+xml,%3Csvg width='350' height='200' viewBox='0 0 350 200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='350' height='200' fill='%23e0f2f2' /%3E%3Crect x='40' y='40' width='80' height='80' rx='5' fill='%23008080' /%3E%3Crect x='135' y='40' width='80' height='80' rx='5' fill='%23008080' /%3E%3Crect x='230' y='40' width='80' height='80' rx='5' fill='%23008080' /%3E%3Crect x='40' y='140' width='270' height='20' rx='5' fill='%23008080' /%3E%3C/svg%3E`,
       technologies: ["HTML","JavaScript","React", "Material UI","Vite"],
-      liveLink: "https://my-portfolio-builder-frontend-rhn5lsjto.vercel.app/",
+      liveLink: "https://my-portfolio-builder-frontend.vercel.app/",
       codeLink: "https://github.com/Anithapalaniyapan/my-portfolio-builder",
     },
     {
