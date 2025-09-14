@@ -8,7 +8,9 @@ import {
   Button, 
   Paper, 
   InputAdornment,
-  FormHelperText
+  FormHelperText,
+  Alert,
+  CircularProgress
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
@@ -17,6 +19,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
 import SendIcon from '@mui/icons-material/Send';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +29,8 @@ const Contact = () => {
   });
   const [errors, setErrors] = useState({});
   const [showGeneralError, setShowGeneralError] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,19 +67,56 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (validate()) {
       setShowGeneralError(false);
-      console.log('Form submitted:', formData);
-      
+      setLoading(true);
 
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-      });
+      try {
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        const templateParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'anithapalaniyappan2@gmail.com',
+          // Alternate keys to match any legacy template variables
+          name: formData.name,
+          email: formData.email,
+          title: 'Contact Us',
+          contact: 'Contact Us',
+          Contact: 'Contact Us'
+        };
+
+        const result = await emailjs.send(
+          serviceId,
+          templateId,
+          templateParams,
+          publicKey
+        );
+
+        if (result.status === 200) {
+          setSubmitStatus('success');
+          setFormData({
+            name: '',
+            email: '',
+            message: '',
+          });
+        } else {
+          setSubmitStatus('error');
+          setShowGeneralError(true);
+        }
+      } catch (error) {
+        setSubmitStatus('error');
+        setShowGeneralError(true);
+        console.error('Error sending email with EmailJS:', error);
+      } finally {
+        setLoading(false);
+      }
     } else {
       setShowGeneralError(true);
     }
@@ -547,7 +589,7 @@ const Contact = () => {
                           type="submit"
                           variant="contained"
                           size="large"
-                          endIcon={<SendIcon />}
+                          endIcon={loading ? <CircularProgress size={24} color="inherit" /> : <SendIcon />}
                           sx={{
                             py: 1.8,
                             px: 4,
@@ -564,9 +606,13 @@ const Contact = () => {
                             transition: 'all 0.3s ease',
                             textTransform: 'none',
                             fontSize: '1rem',
+                            opacity: 1,
+                            cursor: 'pointer',
+                            position: 'relative',
+                            overflow: 'hidden',
                           }}
                         >
-                          Send Message
+                          {loading ? 'Sending...' : 'Send Message'}
                         </Button>
                       </motion.div>
                     </Grid>
@@ -577,6 +623,16 @@ const Contact = () => {
                     Please fill all required fields
                   </Typography>
                 )}
+                                 {submitStatus === 'success' && (
+                   <Alert severity="success" sx={{ mt: 2, borderRadius: 2 }}>
+                     Email sent successfully!
+                   </Alert>
+                 )}
+                 {submitStatus === 'error' && (
+                   <Alert severity="error" sx={{ mt: 2, borderRadius: 2 }}>
+                     Failed to send email. Please try again later.
+                   </Alert>
+                 )}
               </Paper>
             </motion.div>
           </Grid>

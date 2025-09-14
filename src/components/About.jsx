@@ -160,7 +160,7 @@ const About = () => {
                 mb: 3
               }}
             >
-              I'm a detail-oriented Frontend Developer with a strong foundation in React, JavaScript, HTML5, and CSS3. My passion lies in creating responsive, intuitive, and visually appealing web applications that provide exceptional user experiences. During my 6-month Inplant Training, I developed practical skills building interactive interfaces and collaborating with design and backend teams.
+              I'm a detail‑oriented Frontend Developer with a strong foundation in React, Next.js, TypeScript, JavaScript (ES6+), HTML5 and CSS3. I love crafting responsive, intuitive and visually engaging web experiences that deliver real value to users. During my 6‑month inplant training I built interactive interfaces, collaborated closely with designers and backend teams, and learned to ship clean, maintainable code.
             </Typography>
 
             <Typography 
@@ -172,7 +172,7 @@ const About = () => {
                 mb: 3
               }}
             >
-              My technical toolkit includes React.js, Redux for state management, Material UI and Tailwind CSS for styling, and responsive design principles. I'm proficient with modern JavaScript (ES6+), and have experience with version control using Git. I'm particularly interested in frontend animation libraries like Framer Motion to create engaging, dynamic user interfaces.
+              My toolkit includes modern UI systems such as Material‑UI and Tailwind CSS, state management with Redux when needed, and delightful motion using Framer Motion. On the backend, I build RESTful APIs with Node.js and Express.js and work with relational databases like MySQL and PostgreSQL. I use Git and GitHub for version control and collaborate comfortably in team environments.
             </Typography>
 
             <Typography 
@@ -184,7 +184,7 @@ const About = () => {
                 mb: 3
               }}
             >
-              I'm committed to continuous learning and staying updated with the latest web technologies and best practices. As I begin my professional journey, I'm eager to join a collaborative team where I can contribute my skills, learn from experienced developers, and grow into a well-rounded frontend specialist.
+              I'm committed to continuous learning and staying current with best practices. I'm eager to contribute to a collaborative team, take ownership of features end‑to‑end, and grow into a well‑rounded frontend specialist who can also support full‑stack needs when required.
             </Typography>
 
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>

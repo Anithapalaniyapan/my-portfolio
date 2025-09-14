@@ -193,7 +193,7 @@ const Home = () => {
                   textAlign: isMobile ? 'center' : 'left',
                 }}
               >
-                Frontend Developer
+                Frontend Developer • React & Next.js
               </Typography>
             </motion.div>
 
@@ -210,8 +210,7 @@ const Home = () => {
                   lineHeight: 1.8,
                 }}
               >
-                A motivated and passionate Frontend Developer with experience in React, HTML, CSS, and JavaScript. 
-                I'm eager to expand my skills, contribute to meaningful projects, and grow in a dynamic development environment.
+                I build fast, responsive web apps using React, Next.js and TypeScript, with beautiful UIs powered by Material‑UI and Tailwind CSS and smooth motion via Framer Motion. I’m comfortable with Git/GitHub and can support full‑stack needs with Node.js, Express.js and SQL databases (MySQL & PostgreSQL). Let’s turn ideas into polished user experiences.
               </Typography>
             </motion.div>
 

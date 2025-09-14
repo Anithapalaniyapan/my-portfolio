@@ -10,18 +10,25 @@ const Skills = () => {
   const isTablet = useMediaQuery(theme.breakpoints.down('md'));
 
   const technicalSkills = [
+   
+    { name: "TypeScript", level: 75, icon: "🔷", color: "#3178C6" },
+    { name: "React JS", level: 85, icon: "⚛️", color: "#61DAFB" },
+    { name: "Next.js", level: 70, icon: "⚡", color: "#000000" },
     { name: "HTML", level: 90, icon: "🌐", color: "#E34F26" },
     { name: "CSS", level: 85, icon: "🎨", color: "#1572B6" },
-    { name: "React JS", level: 85, icon: "⚛️", color: "#61DAFB" },
     { name: "JavaScript", level: 80, icon: "📜", color: "#F7DF1E" },
     { name: "Node.js", level: 60, icon: "🟢", color: "#339933" },
-    { name: "SQL", level: 60, icon: "🛢️", color: "#4479A1" },
+    { name: "Express.js", level: 65, icon: "🚀", color: "#000000" },
+    { name: "PostgreSQL", level: 55, icon: "🐘", color: "#336791" },
+    { name: "MySQL", level: 60, icon: "🛢️", color: "#4479A1" },
+    { name: "Material-UI", level: 80, icon: "🎨", color: "#0081CB" },
   ];
 
   const tools = [
     { name: "Visual Studio", icon: "🖥️", color: "#5C2D91", description: "Primary code editor for development" },
     { name: "Version Control (GitHub)", icon: "📚", color: "#181717", description: "For code management and collaboration" },
     { name: "MySQL Workbench", icon: "🛢️", color: "#4479A1", description: "Database design and administration" },
+    { name: "PostgreSQL", icon: "🐘", color: "#336791", description: "Relational database management" },
   ];
 
   const languages = [
