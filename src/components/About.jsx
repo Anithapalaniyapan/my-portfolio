@@ -160,7 +160,7 @@ const About = () => {
                 mb: 3
               }}
             >
-              I'm a detail‑oriented Frontend Developer with a strong foundation in React, Next.js, TypeScript, JavaScript (ES6+), HTML5 and CSS3. I love crafting responsive, intuitive and visually engaging web experiences that deliver real value to users. During my 6‑month inplant training I built interactive interfaces, collaborated closely with designers and backend teams, and learned to ship clean, maintainable code.
+              I'm a detail‑oriented Frontend Developer with a strong foundation in React, Next.js, TypeScript, JavaScript (ES6+), HTML5 and CSS3. I love crafting responsive, intuitive and visually engaging web experiences that deliver real value to users. During my one-year inplant training I built interactive interfaces, collaborated closely with designers and backend teams, and learned to ship clean, maintainable code.
             </Typography>
 
             <Typography 
