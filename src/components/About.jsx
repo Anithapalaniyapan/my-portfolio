@@ -153,7 +153,7 @@ const About = () => {
           >
             <Typography 
               variant="body1" 
-              paragraph
+              component="p"
               sx={{ 
                 fontSize: { xs: '1.1rem', md: '1.2rem' },
                 lineHeight: 1.8,
@@ -165,7 +165,7 @@ const About = () => {
 
             <Typography 
               variant="body1" 
-              paragraph
+              component="p"
               sx={{ 
                 fontSize: { xs: '1.1rem', md: '1.2rem' },
                 lineHeight: 1.8,
@@ -177,7 +177,7 @@ const About = () => {
 
             <Typography 
               variant="body1" 
-              paragraph
+              component="p"
               sx={{ 
                 fontSize: { xs: '1.1rem', md: '1.2rem' },
                 lineHeight: 1.8,

@@ -200,7 +200,7 @@ const Home = () => {
             <motion.div variants={itemVariants}>
               <Typography
                 variant="body1"
-                paragraph
+                component="p"
                 sx={{ 
                   maxWidth: '600px', 
                   mb: 3, 

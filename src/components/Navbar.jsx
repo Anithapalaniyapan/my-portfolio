@@ -9,6 +9,7 @@ import {
   List, 
   ListItem, 
   ListItemText,
+  ListItemButton,
   Box,
   useMediaQuery,
   useTheme
@@ -77,17 +78,26 @@ const Navbar = () => {
                 >
                   <List>
                     {navItems.map((item) => (
-                      <ListItem button key={item.id} component={Link} to={item.id} smooth={true} duration={500}>
-                        <ListItemText 
+                      <ListItemButton
+                        key={item.id}
+                        component={Link}
+                        to={item.id}
+                        smooth={true}
+                        duration={500}
+                        onClick={toggleDrawer(false)}
+                      >
+                        <ListItemText
                           primary={item.name}
-                          primaryTypographyProps={{ 
-                            sx: { 
-                              color: '#008080',
-                              fontWeight: 'medium' 
-                            } 
-                          }} 
+                          slotProps={{
+                            primary: {
+                              sx: {
+                                color: '#008080',
+                                fontWeight: 'medium'
+                              }
+                            }
+                          }}
                         />
-                      </ListItem>
+                      </ListItemButton>
                     ))}
                   </List>
                 </Box>

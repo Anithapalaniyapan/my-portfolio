@@ -449,12 +449,14 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleChange}
                           error={!!errors.name}
-                          InputProps={{
-                            startAdornment: (
-                              <InputAdornment position="start">
-                                <PersonIcon sx={{ color: 'primary.main' }} />
-                              </InputAdornment>
-                            ),
+                          slotProps={{
+                            input: {
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <PersonIcon sx={{ color: 'primary.main' }} />
+                                </InputAdornment>
+                              )
+                            }
                           }}
                           variant="outlined"
                           sx={{
@@ -496,12 +498,14 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleChange}
                           error={!!errors.email}
-                          InputProps={{
-                            startAdornment: (
-                              <InputAdornment position="start">
-                                <EmailIcon sx={{ color: 'primary.main' }} />
-                              </InputAdornment>
-                            ),
+                          slotProps={{
+                            input: {
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <EmailIcon sx={{ color: 'primary.main' }} />
+                                </InputAdornment>
+                              )
+                            }
                           }}
                           variant="outlined"
                           sx={{
@@ -544,12 +548,14 @@ const Contact = () => {
                           value={formData.message}
                           onChange={handleChange}
                           error={!!errors.message}
-                          InputProps={{
-                            startAdornment: (
-                              <InputAdornment position="start" sx={{ mt: 1 }}>
-                                <MessageIcon sx={{ color: 'primary.main' }} />
-                              </InputAdornment>
-                            ),
+                          slotProps={{
+                            input: {
+                              startAdornment: (
+                                <InputAdornment position="start" sx={{ mt: 1 }}>
+                                  <MessageIcon sx={{ color: 'primary.main' }} />
+                                </InputAdornment>
+                              )
+                            }
                           }}
                           variant="outlined"
                           sx={{
